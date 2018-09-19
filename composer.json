@@ -18,6 +18,7 @@
     },
     "require-dev": {
         "symfony/dotenv": "*",
+        "symfony/phpunit-bridge": "*",
         "symfony/var-dumper": "*",
         "symfony/web-server-bundle": "*"
     },

@@ -39,6 +39,11 @@ class CityRepository
         return $conn->fetchAssoc($sql, $params);
     }
 
+    public function a()
+    {
+        return false;
+    }
+
     public function insertCity($name, $key)
     {
         $conn = $this->objectManager->getConnection();
