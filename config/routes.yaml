@@ -1,0 +1,12 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+city-data:
+    path: /city-data/{id}
+    controller: App\Controller\DefaultController::cityData
+
+add-city:
+    path: /add-city/{name}/{key}
+    controller: App\Controller\DefaultController::addCity
+
