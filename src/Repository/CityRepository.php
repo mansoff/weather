@@ -17,6 +17,9 @@ class CityRepository
         $this->objectManager = $objectManager;
     }
 
+    /**
+     * @return mixed
+     */
     public function getAll()
     {
         $conn = $this->objectManager->getConnection();
@@ -27,6 +30,10 @@ class CityRepository
         return $stmt->fetchAll();
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getById($id)
     {
         $conn = $this->objectManager->getConnection();
@@ -39,11 +46,11 @@ class CityRepository
         return $conn->fetchAssoc($sql, $params);
     }
 
-    public function a()
-    {
-        return false;
-    }
-
+    /**
+     * @param $name
+     * @param $key
+     * @return int
+     */
     public function insertCity($name, $key)
     {
         $conn = $this->objectManager->getConnection();

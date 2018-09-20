@@ -36,6 +36,11 @@ services:
 
     api.request_executor:
         class: App\Services\Api\RequestExecutor
+        arguments:
+          $clientBuilder: '@api.client_builder'
+
+    api.client_builder:
+        class: App\Services\Api\ClientBuilder
 
     api.request_handler:
         class: App\Services\Api\RequestHandler

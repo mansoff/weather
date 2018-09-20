@@ -7,6 +7,11 @@ class Openweather extends RequestHandler
 {
     const BASE = 'http://api.openweathermap.org/';
 
+    /**
+     * @param string $cityUid
+     * @param string $apiKey
+     * @return string
+     */
     protected function getUri(string $cityUid, string $apiKey) : string
     {
         return 'data/2.5/weather?q='.$cityUid
@@ -14,6 +19,9 @@ class Openweather extends RequestHandler
             .'&units=metric';
     }
 
+    /**
+     * @return string
+     */
     protected function getBase() : string
     {
         return self::BASE;

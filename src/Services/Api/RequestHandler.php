@@ -14,6 +14,11 @@ abstract class RequestHandler
         $this->requestExecutor = $requestExecutor;
     }
 
+    /**
+     * @param string $cityName
+     * @param string $key
+     * @return mixed|null
+     */
     public function getCityData(string $cityName, string $key)
     {
         $response = $this->requestExecutor
@@ -25,9 +30,19 @@ abstract class RequestHandler
         if ($response->getStatusCode() == 200) {
             return json_decode($response->getBody(), true);
         }
+
+        return null;
     }
 
+    /**
+     * @return string
+     */
     abstract protected function getBase() : string;
 
+    /**
+     * @param string $cityUid
+     * @param string $apiKey
+     * @return string
+     */
     abstract protected function getUri(string $cityUid, string $apiKey) : string;
 }
